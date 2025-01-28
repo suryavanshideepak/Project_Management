@@ -1,9 +1,12 @@
 import React from "react";
 import MyRouter from "./routes";
+import MainContext from "./context/MainContext";
 
 function App() {
   return (
-    <MyRouter/>
+    <MainContext>
+      <MyRouter/>
+    </MainContext>
   );
 }
 

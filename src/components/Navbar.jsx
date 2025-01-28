@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../features/auth/authSlice";
+import { Context } from "../context/MainContext";
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { isAuth , setIsAuth } = useContext(Context)
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleLogout = () => {
     dispatch(logout());
+    setIsAuth(false)
     navigate('/');
   };
 

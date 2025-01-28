@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { auth } from "../services/firebase";
 import Dashboard from "../pages/Dashboard";
@@ -9,12 +9,14 @@ import Navbar from '../components/Navbar'
 import User from "../pages/Users";
 import TaskManagement from "../pages/TaskManagement";
 import { setUser } from "../features/auth/authSlice";
+import { Context } from "../context/MainContext";
 
 
 const MyRouter = () => {
   const user = useSelector(state => state.auth.user)
   const dispatch = useDispatch()
   const [loading, setLoading] = useState(true);
+  const { isAuth, setIsAuth} = useContext(Context)
   const pages = [
     { path:'/dashboard', exact: true, component: Dashboard },
     { path:'/dashboard/:projectId', exact: true, component: ProjectDetails },
@@ -44,9 +46,9 @@ if (loading) {
 }
 return(
     <BrowserRouter >
-          {user && <Navbar/>}
+          {isAuth && <Navbar/>}
           <Routes>
-              {user ? pages.map(({ component: Component, path, exact, auth }) => {         
+              {isAuth ? pages.map(({ component: Component, path, exact, auth }) => {         
                 return (
                 <Route
                     key={path}
