@@ -96,7 +96,8 @@ const UserManagement = () => {
       </Modal>
 
       {/* User Table */}
-      <div className="overflow-x-auto mt-6">
+      {
+        users.length > 0 ? <div className="overflow-x-auto mt-6">
         <table className="w-full table-auto border-collapse border border-gray-300">
           <thead className="bg-gray-100">
             <tr>
@@ -128,7 +129,9 @@ const UserManagement = () => {
             ))}
           </tbody>
         </table>
-      </div>
+      </div>: ''
+      }
+      
     </div>
   );
 };

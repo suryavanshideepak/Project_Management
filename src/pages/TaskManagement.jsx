@@ -160,7 +160,7 @@ const TaskManagement = () => {
           </button>
         )}
       </div>
-
+      {tasks.length > 0 ?
       <div className="overflow-x-auto mt-6">
         <table className="w-full table-auto border-collapse border border-gray-300">
           <thead>
@@ -194,7 +194,7 @@ const TaskManagement = () => {
               ))}
           </tbody>
         </table>
-      </div>
+      </div>: ''}
     </div>
   );
 };
