@@ -38,8 +38,8 @@ const Login = () => {
   return (
     <>
     <div className="w-full flex flex-col justify-center items-center min-h-screen bg-midnight">
-      <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
-        <h2 className="text-3xl text-center mb-6">Login</h2>
+    <div className="w-4/5 sm:w-full max-w-md p-6 bg-white rounded-lg shadow-md">
+    <h2 className="text-3xl text-center mb-6 text-black-500">Login</h2>
         <form onSubmit={handleLogin} className="space-y-6">
           <div>
             <label htmlFor="input-group-1" className="block text-sm font-medium text-gray-900">Your Email</label>
