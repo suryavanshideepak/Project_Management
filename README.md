@@ -6,6 +6,9 @@
 <!-- to start the application -->
 3. npm run dev 
 <!-- Credentials -->
+4.Credentials to login
+email :-  admin@gmail.com
+password :- Test@1234
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
